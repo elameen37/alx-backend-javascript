@@ -1,27 +1,29 @@
 /* eslint no-underscore-dangle: ["error", {"allow": ["_name", "_code", "_amount", "_currency"] }] */
 /* eslint-disable-next-line */
-import Currency from './3-currency';
+import Currency from "./3-currency";
 
 export default class Pricing {
   constructor(amount, currency) {
-    this._amount = amount;
-    this._currency = currency;
+    this.amount = amount;
+    this.currency = currency;
   }
 
+  // amount
   get amount() {
     return this._amount;
   }
 
-  set amount(cash) {
-    this._amount = cash;
+  set amount(value) {
+    this._amount = value;
   }
 
+  // currency
   get currency() {
     return this._currency;
   }
 
-  set currency(cur) {
-    this._currency = cur;
+  set currency(value) {
+    this._currency = value;
   }
 
   displayFullPrice() {
