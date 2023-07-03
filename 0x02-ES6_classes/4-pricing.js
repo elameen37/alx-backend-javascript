@@ -1,6 +1,6 @@
 /* eslint no-underscore-dangle: ["error", {"allow": ["_name", "_code", "_amount", "_currency"] }] */
 /* eslint-disable-next-line */
-import Currency from './3-currency.js';
+import Currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
@@ -12,21 +12,20 @@ export default class Pricing {
     return this._amount;
   }
 
-  set amount(newAmount) {
-    this._amount = newAmount;
+  set amount(cash) {
+    this._amount = cash;
   }
 
   get currency() {
     return this._currency;
   }
 
-  set currency(newCurrency) {
-    this._currency = newCurrency;
+  set currency(cur) {
+    this._currency = cur;
   }
 
   displayFullPrice() {
-    const { name, code } = this._currency;
-    return `${this._amount} ${name} (${code})`;
+    return `${this.amount} ${this.currency.displayFullCurrency()}`;
   }
 
   static convertPrice(amount, conversionRate) {
